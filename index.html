@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Sanctuary 💕</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle, #1a1a2e, #0f0f1a);
+  color: white;
+  text-align: center;
+}
+
+/* Login */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 0 25px pink;
+}
+
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 30px;
+  border-radius: 25px;
+  border: none;
+  background: linear-gradient(45deg, pink, hotpink);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Main Page */
+#main {
+  display: none;
+  padding: 20px;
+}
+
+img {
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px pink;
+  margin-top: 20px;
+}
+
+.gallery {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.gallery img {
+  width: 180px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Login Page -->
+<div class="login-container" id="login">
+  <div class="card">
+    <h2>Private Love Space 💕</h2>
+    <input type="password" id="password" placeholder="Enter Secret Code"><br>
+    <button onclick="login()">Unlock 🔐</button>
+    <p id="error"></p>
+  </div>
+</div>
+
+<!-- Main Page -->
+<div id="main">
+  <h1>Welcome AAKASH❤️NANDANI</h1>
+
+  <!-- Main Photo -->
+  <img src="photo.jpg">
+
+  <h2>💌 Message</h2>
+  <p>You are my happiness, my everything ,my jaaaan❤️</p>
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <img src="photo.jpg">
+    <img src="photo.jpg">
+  </div>
+
+  <!-- Surprise -->
+  <button onclick="showSurprise()">Tap for Surprise 🎁</button>
+  <p id="surprise" style="display:none; color:pink;">I love you forever NANDANI JI 💖</p>
+
+</div>
+
+<script>
+function login(){
+  let pass = document.getElementById('password').value;
+  if(pass === "AAKASHNANDANI"){
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('main').style.display = 'block';
+  } else {
+    document.getElementById('error').innerText = "Wrong password 😢";
+  }
+}
+
+function showSurprise(){
+  document.getElementById('surprise').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
