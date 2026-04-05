@@ -1,116 +1,13 @@
-<!DOCTYPE html><html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love Sanctuary Ultra Pro </title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"><style>
-    body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
-        color: white;
-        text-align: center;
-    }
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Photo</title>
+</head>
+<body style="background:black; text-align:center;">
 
-    .card {
-        background: rgba(255,255,255,0.05);
-        backdrop-filter: blur(15px);
-        padding: 30px;
-        border-radius: 20px;
-        display: inline-block;
-    }
+    <h1 style="color:white;">My Photo ❤️</h1>
 
-    button {
-        padding: 12px 25px;
-        border-radius: 10px;
-        border: none;
-        background: linear-gradient(45deg, pink, hotpink);
-        cursor: pointer;
-        font-weight: bold;
-    }
+    <img src="couple.jpg" style="width:300px; border-radius:15px;">
 
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-        padding: 20px;
-    }
-
-    .gallery img {
-        width: 100%;
-        border-radius: 15px;
-        transition: 0.3s;
-    }
-
-    .gallery img:hover {
-        transform: scale(1.05);
-    }
-
-    #countdown {
-        font-size: 22px;
-        margin-top: 20px;
-        color: pink;
-    }
-
-    </style></head><body><div id="login" style="margin-top:100px;">
-      <div class="card">
-          <h2>Private Love Space </h2>
-          <input type="password" id="password" placeholder="Enter Secret Code"><br><br>
-          <button onclick="login()">Enter</button>button>
-      </div>div>
-    </div>div><div id="main" style="display:none;">
-      <h1>Welcome </h1>  <h2>Our Gallery </h2>
-      <div class="gallery">
-          <img src="https://via.placeholder.com/300">
-          <img src="https://via.placeholder.com/300">
-          <img src="https://via.placeholder.com/300">
-      </div>div>  <h2>Special Countdown </h2>
-      <div id="countdown"></div>div>  <h2>Video Memory </h2>
-      <video width="80%" controls>
-          <source src="" type="video/mp4">
-      </video>video>  <h2>Secret Note </h2>
-      <textarea id="note" placeholder="Write something..." style="width:80%; height:100px;"></textarea>
-      <br><br>
-      <button onclick="saveNote()">Save</button>button>  <p id="savedNote"></p>p>
-    </div>div><script>
-      function login(){
-          let pass = document.getElementById('password').value;
-          if(pass === "AAKASHNANDANI"){
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('main').style.display = 'block';
-          } else {
-                alert("Wrong password");
-          }
-      }
-
-      // Countdown
-      let targetDate = new Date("2026-12-31");
-      setInterval(() => {
-          let now = new Date();
-          let diff = targetDate - now;
-
-          let days = Math.floor(diff / (1000*60*60*24));
-          let hours = Math.floor((diff/(1000*60*60))%24);
-
-          document.getElementById('countdown').innerHTML =
-                days + " days " + hours + " hours left ";
-      }, 1000);
-
-      // Save note (local storage)
-      function saveNote(){
-          let note = document.getElementById('note').value;
-          localStorage.setItem('loveNote', note);
-          document.getElementById('savedNote').innerText = "Saved: " + note;
-      }
-
-      // Load note
-      window.onload = function(){
-          let saved = localStorage.getItem('loveNote');
-          if(saved){
-                document.getElementById('savedNote').innerText = "Saved: " + saved;
-          }
-      }
-        </script>
-    </body>
+</body>
 </html>
-    
